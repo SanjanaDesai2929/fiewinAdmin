@@ -31,7 +31,7 @@ const Setting = () => {
 
 
                 },
-                credentials: "include"
+             
 
             })
             const datares = await res.json();
