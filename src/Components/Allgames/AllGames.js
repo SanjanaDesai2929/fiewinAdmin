@@ -41,7 +41,7 @@ const AllGames = () => {
         const res = await fetch('https://fiewin-0083s-projects.vercel.app/admin/allGame', {
             method: "GET",
             headers: {
-                Accept: "application/json",
+             
                 "Content-Type": "application/json",
                 data: localStorage.getItem('Auth_token')
 
