@@ -25,7 +25,7 @@ const Login = () => {
             });
         } else {
 
-            const res = await fetch('/admin/login', {
+            const res = await fetch('https://fiewin-0083s-projects.vercel.app/admin/login', {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
