@@ -17,7 +17,7 @@ const Withdraw = () => {
     //function to update status data
     // const updateStatus = async (status, _id) => {
     //     console.log(status, _id);
-    //     const res = await fetch('https://fiewin-0083s-projects.vercel.app/admin/withdrawstatus', {
+    //     const res = await fetch('/admin/withdrawstatus', {
     //         method: "POST",
     //         headers: {
     //             "Content-Type": "application/json",
@@ -208,7 +208,7 @@ const Withdraw = () => {
     //function to update status data
     const updateStatus = async (status, _id) => {
         console.log(status, _id);
-        const res = await fetch('https://fiewin-0083s-projects.vercel.app/admin/withdrawstatus', {
+        const res = await fetch('/admin/withdrawstatus', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

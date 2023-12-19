@@ -28,7 +28,7 @@ const Addtask = () => {
     //get task data 
     const callAbout = async () => {
         try {
-            const res = await fetch('https://fiewin-0083s-projects.vercel.app/admin/gettask', {
+            const res = await fetch('admin/gettask', {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -86,7 +86,7 @@ const Addtask = () => {
 
         //api
         try {
-            const res = await fetch('https://fiewin-0083s-projects.vercel.app/admin/editreword', {
+            const res = await fetch('/admin/editreword', {
                 method: "POST",
                 headers: {
                     // "Content-Type": "application/json"

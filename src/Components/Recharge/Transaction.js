@@ -22,7 +22,7 @@ const Transaction = () => {
     //get user transaction Data
     const callAbout = async () => {
         try {
-            const res = await fetch('https://fiewin-0083s-projects.vercel.app/admin/transaction', {
+            const res = await fetch('/admin/transaction', {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -95,7 +95,7 @@ const Transaction = () => {
                 document.getElementById('select').disabled = true;
 
                 try {
-                    const res = await fetch('https://fiewin-0083s-projects.vercel.app/admin/status', {
+                    const res = await fetch('/admin/status', {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json",
@@ -123,7 +123,7 @@ const Transaction = () => {
             }
             else {
                 try {
-                    const res = await fetch('https://fiewin-0083s-projects.vercel.app/admin/status', {
+                    const res = await fetch('/admin/status', {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json",

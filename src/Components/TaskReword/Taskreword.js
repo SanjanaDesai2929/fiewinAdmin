@@ -24,7 +24,7 @@ const Taskreword = () => {
         const _id = data
 
         try {
-            const res = await fetch('https://fiewin-0083s-projects.vercel.app/admin/taskdelete', {
+            const res = await fetch('/admin/taskdelete', {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

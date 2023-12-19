@@ -22,7 +22,7 @@ const Setting = () => {
     useEffect(() => {
         //get data
         const getData = async () => {
-            const res = await fetch('https://fiewin-0083s-projects.vercel.app/admin/SettingData', {
+            const res = await fetch('admin/SettingData', {
                 method: "GET",
                 headers: {
                     Accept: "application/json",
@@ -55,7 +55,7 @@ const Setting = () => {
         formData.append("logoId", logoId)
         formData.append("footerId", footerId)
 
-        const res = await fetch('https://fiewin-0083s-projects.vercel.app/admin/updateSetting', {
+        const res = await fetch('admin/updateSetting', {
             method: "POST",
             headers: {
                 // "Content-Type": "application/json"
