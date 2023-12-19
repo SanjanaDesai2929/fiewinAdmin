@@ -29,7 +29,7 @@ const Minesweeper = () => {
 
                 },
                 ajax: {
-                    url: "admin/MinesSweeper",
+                    url: "https://fiewin-0083s-projects.vercel.app/admin/MinesSweeper",
                     headers: {
                         data: localStorage.getItem('Auth_token')
 

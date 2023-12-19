@@ -62,7 +62,7 @@ const Withdraw = () => {
 
                 },
                 ajax: {
-                    url: "admin/withdraw",
+                    url: "https://fiewin-0083s-projects.vercel.app/admin/withdraw",
                     headers: {
                         data: localStorage.getItem('Auth_token')
 

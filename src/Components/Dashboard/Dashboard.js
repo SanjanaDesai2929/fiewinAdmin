@@ -32,7 +32,7 @@ const Dashboard = () => {
 
         },
         ajax: {
-          url: "admin/userdata",
+          url: "https://fiewin-0083s-projects.vercel.app/admin/userdata",
           headers: {
             data: localStorage.getItem('Auth_token')
           },

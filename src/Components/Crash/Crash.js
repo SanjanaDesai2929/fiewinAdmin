@@ -31,7 +31,7 @@ const Crash = () => {
 
                 },
                 ajax: {
-                    url: "admin/crashResult",
+                    url: "https://fiewin-0083s-projects.vercel.app/admin/crashResult",
                     headers: {
             data: localStorage.getItem('Auth_token')
 

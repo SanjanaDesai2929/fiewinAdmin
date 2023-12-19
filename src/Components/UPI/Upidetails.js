@@ -74,7 +74,7 @@ const Upidetails = () => {
 
                 },
                 ajax: {
-                    url: "admin/upidata",
+                    url: "https://fiewin-0083s-projects.vercel.app/admin/upidata",
                     headers: {
                         data: localStorage.getItem('Auth_token')
 

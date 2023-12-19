@@ -36,7 +36,7 @@ const Perioddata = () => {
 
                 },
                 ajax: {
-                    url: `admin/periodData?dataId=${dataId}`,
+                    url: `https://fiewin-0083s-projects.vercel.app/admin/periodData?dataId=${dataId}`,
                     headers: {
                         data: localStorage.getItem('Auth_token')
 

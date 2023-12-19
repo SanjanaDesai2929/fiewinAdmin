@@ -41,7 +41,7 @@ const Rounddata = () => {
 
                 },
                 ajax: {
-                    url: `admin/RoundData?dataId=${dataId}`,
+                    url: `https://fiewin-0083s-projects.vercel.app/admin/RoundData?dataId=${dataId}`,
                     headers: {
                         data: localStorage.getItem('Auth_token')
 

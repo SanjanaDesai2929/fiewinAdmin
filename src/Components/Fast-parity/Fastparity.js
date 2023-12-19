@@ -152,7 +152,7 @@ const Fastparity = () => {
 
                 },
                 ajax: {
-                    url: "admin/FastParity",
+                    url: "https://fiewin-0083s-projects.vercel.app/admin/FastParity",
                     headers: {
                         data: localStorage.getItem('Auth_token')
 

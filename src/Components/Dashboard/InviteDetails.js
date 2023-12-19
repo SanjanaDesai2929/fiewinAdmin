@@ -32,7 +32,7 @@ const InviteDetails = () => {
 
                 },
                 ajax: {
-                    url: `admin/invitepeoples?dataId=${dataId}`,
+                    url: `https://fiewin-0083s-projects.vercel.app/admin/invitepeoples?dataId=${dataId}`,
                     headers: {
                         data: localStorage.getItem('Auth_token')
 
@@ -114,7 +114,7 @@ const InviteDetails = () => {
 
                 },
                 ajax: {
-                    url: `admin/InviteIncomeDetails?dataId=${dataId}`,
+                    url: `https://fiewin-0083s-projects.vercel.app/admin/InviteIncomeDetails?dataId=${dataId}`,
                     headers: {
                         data: localStorage.getItem('Auth_token')
 
@@ -225,7 +225,7 @@ const InviteDetails = () => {
 
                 },
                 ajax: {
-                    url: `admin/CheckInBonus?dataId=${dataId}`,
+                    url: `https://fiewin-0083s-projects.vercel.app/admin/CheckInBonus?dataId=${dataId}`,
                     headers: {
                         data: localStorage.getItem('Auth_token')
 
@@ -341,7 +341,7 @@ const InviteDetails = () => {
 
                 },
                 ajax: {
-                    url: `admin/RewordDetails?dataId=${dataId}`,
+                    url: `https://fiewin-0083s-projects.vercel.app/admin/RewordDetails?dataId=${dataId}`,
                     headers: {
                         data: localStorage.getItem('Auth_token')
 
@@ -436,7 +436,7 @@ const InviteDetails = () => {
 
                 },
                 ajax: {
-                    url: `admin/BankAccountDetail?dataId=${dataId}`,
+                    url: `https://fiewin-0083s-projects.vercel.app/admin/BankAccountDetail?dataId=${dataId}`,
                     headers: {
                         data: localStorage.getItem('Auth_token')
 
@@ -529,7 +529,7 @@ const InviteDetails = () => {
 
                 },
                 ajax: {
-                    url: `admin/AgentCashGrowthPlan?dataId=${dataId}`,
+                    url: `https://fiewin-0083s-projects.vercel.app/admin/AgentCashGrowthPlan?dataId=${dataId}`,
                     headers: {
                         data: localStorage.getItem('Auth_token')
 

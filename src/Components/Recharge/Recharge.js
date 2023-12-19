@@ -32,7 +32,7 @@ const Recharge = () => {
 
                 },
                 ajax: {
-                    url: `admin/rechargeData`,
+                    url: `https://fiewin-0083s-projects.vercel.app/admin/rechargeData`,
                     headers: {
                         data: localStorage.getItem('Auth_token')
 

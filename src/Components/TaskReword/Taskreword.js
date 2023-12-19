@@ -69,7 +69,7 @@ const Taskreword = () => {
 
                 },
                 ajax: {
-                    url: "admin/taskreword",
+                    url: "https://fiewin-0083s-projects.vercel.app/admin/taskreword",
                     headers: {
                         data: localStorage.getItem('Auth_token')
 
