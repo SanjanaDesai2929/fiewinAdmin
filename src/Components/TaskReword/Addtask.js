@@ -45,7 +45,7 @@ const Addtask = () => {
 
 
             try {
-                const res = await fetch('/admin/addtask', {
+                const res = await fetch('https://fiewin-0083s-projects.vercel.app/admin/addtask', {
                     method: "POST",
                     headers: {
                         // "Content-Type": "application/json"

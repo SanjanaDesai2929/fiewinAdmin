@@ -17,7 +17,7 @@ const Footer = () => {
     useEffect(() => {
 
         const getData = async () => {
-            const res = await fetch('admin/SettingData', {
+            const res = await fetch('https://fiewin-0083s-projects.vercel.app/admin/SettingData', {
                 method: "GET",
                 headers: {
                     Accept: "application/json",

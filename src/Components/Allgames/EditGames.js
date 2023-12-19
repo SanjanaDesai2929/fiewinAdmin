@@ -20,7 +20,7 @@ const EditGames = () => {
     //get data
     const callData = async () => {
         try {
-            const res = await fetch('admin/OneGame', {
+            const res = await fetch('https://fiewin-0083s-projects.vercel.app/admin/OneGame', {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -57,7 +57,7 @@ const EditGames = () => {
         formData.append("image", image)
         formData.append("name", name)
 
-        const res = await fetch('admin/OneGameUpdate', {
+        const res = await fetch('https://fiewin-0083s-projects.vercel.app/admin/OneGameUpdate', {
             method: "POST",
             headers: {
                 // "Content-Type": "application/json"

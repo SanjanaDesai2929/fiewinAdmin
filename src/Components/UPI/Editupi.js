@@ -22,7 +22,7 @@ const Editupi = () => {
     //get upi data 
     const callData = async () => {
         try {
-            const res = await fetch('admin/userupidata', {
+            const res = await fetch('https://fiewin-0083s-projects.vercel.app/admin/userupidata', {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -72,7 +72,7 @@ const Editupi = () => {
             formData.append("qrcode", qrcode)
 
             try {
-                const res = await fetch('admin/upidataupdate', {
+                const res = await fetch('https://fiewin-0083s-projects.vercel.app/admin/upidataupdate', {
                     method: "POST",
                     headers: {
                         // "Content-Type": "application/json"

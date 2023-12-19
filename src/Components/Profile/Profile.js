@@ -21,7 +21,7 @@ const Profile = () => {
     const callAbout = async () => {
 
         try {
-            const res = await fetch('admin/profile', {
+            const res = await fetch('https://fiewin-0083s-projects.vercel.app/admin/profile', {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -81,7 +81,7 @@ const Profile = () => {
         } else {
 
             try {
-                const res = await fetch('admin/profileupdate', {
+                const res = await fetch('https://fiewin-0083s-projects.vercel.app/admin/profileupdate', {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",

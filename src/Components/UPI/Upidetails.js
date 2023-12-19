@@ -24,7 +24,7 @@ const Upidetails = () => {
         const _id = e
 
         try {
-            const res = await fetch('/admin/upidelete', {
+            const res = await fetch('https://fiewin-0083s-projects.vercel.app/admin/upidelete', {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
