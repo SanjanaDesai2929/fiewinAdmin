@@ -5,50 +5,18 @@ import { Link, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import { useEffect } from 'react'
 import { toast } from 'react-toastify';
+import $ from "jquery"
 
 
 const Upidetails = () => {
     const navigate = useNavigate()
-    const [data, setData] = useState()
+
     //click-on Add button
     const handleAddClick = () => {
         navigate('/addupi')
     }
 
-    //get Data of Upi 
-    const callData = async () => {
-        try {
 
-            const res = await fetch('admin/upidata', {
-                method: "GET",
-                headers: {
-                    Accept: "application/json",
-                    "Content-Type": "application/json",
-                    data: localStorage.getItem('Auth_token')
-
-
-                },
-                credentials: "include"
-
-            })
-            console.log('response')
-            const data = await res.json();
-
-            setData(data)
-
-            if (res.status === 200) {
-                console.log('done');
-
-            }
-        } catch (e) {
-            console.log(e);
-            // navigate('/Login')
-        }
-    }
-
-    useEffect(() => {
-        callData()
-    }, [])
 
     // delete upi function
     const deleteFun = async (e) => {
@@ -75,7 +43,7 @@ const Upidetails = () => {
                     // onHidden: window.location.reload()
                 });
                 setTimeout(() => {
-                    window.location.reload(false);
+                    TableDatatablesManaged.init()
                 }, 800);
             }
         } catch (e) {
@@ -84,6 +52,100 @@ const Upidetails = () => {
 
 
     }
+
+
+
+    var TableDatatablesManaged = (function () {
+        var initTable1 = function () {
+            // var table = $("#dashboard-tbl");
+            var table1 = $("#UpiDetails").DataTable({
+                processing: true,
+                serverSide: true,
+                destroy: true,
+                language: {
+                    search: "Search: ",
+                    searchPlaceholder: "Search...",
+                },
+                language: {
+                    paginate: {
+                        next: '<i class="fa fa-chevron-right" aria-hidden="true"></i>',
+                        previous: '<i class="fa fa-chevron-left" aria-hidden="true"></i>'
+                    }
+
+                },
+                ajax: {
+                    url: "admin/upidata",
+                    headers: {
+                        data: localStorage.getItem('Auth_token')
+
+                    },
+                    type: "GET",
+                    dataSrc: "data",
+                },
+                columns: [
+                    {
+                        data: 'sr',
+                        sorting: false
+                    },
+                    {
+                        data: 'paymentMethod',
+                    },
+                    {
+                        data: 'account',
+                    },
+                    {
+                        data: null,
+                        render: function (data) {
+                            return ' <button class="btn-sm btn-primary" id="edit" ><i class="bi bi-pencil"></i></button>' +
+                                '<button class="btn-sm btn-danger buttonData" id="delete">' + '<i class="bi bi-trash"></i>' + '</button>'
+                        }
+                    },
+
+
+                ],
+
+                // select: {
+                //   // style: "multi",
+                //   selector: "td:first-child",
+                // },
+                order: [[1, "desc"]],
+                Destroy: true,
+            });
+
+
+            $("#UpiDetails tbody").on("click", "#edit", function () {
+                var row = window.$(this).parents("tr")[0];
+                const id = table1.row(row).data() && table1.row(row).data()
+                console.log(id);
+                // console.log("rowUserID", id.id );
+                navigate('/editupi', { state: id && id.id })
+            });
+            $("#UpiDetails tbody").on("click", "#delete", function () {
+
+                var row = window.$(this).parents("tr")[0];
+                const id = table1.row(row).data() && table1.row(row).data()
+
+                if (id) {
+                    deleteFun(id && id.id)
+                }
+            });
+
+        };
+        return {
+            init: function () {
+                if (!$().dataTable) {
+                    return;
+                }
+                initTable1();
+            },
+        };
+    })();
+
+
+    $(document).ready(function () {
+        $.fn.dataTableExt.sErrMode = "throw";
+        TableDatatablesManaged.init();
+    });
 
 
 
@@ -120,31 +182,17 @@ const Upidetails = () => {
 
                                                 <div className="card-body">
                                                     <h4 className="card-title">Upi-Details</h4>
-                                                    <table className="table className='table table-bordered table-striped tableFont'">
+                                                    <table id="UpiDetails" className='table table-bordered table-striped tableFont' >
                                                         <thead>
-                                                            <tr>
-                                                                <th scope="col">Payment Method</th>
-                                                                <th scope="col">UPI</th>
-                                                                <th scope="col">Action</th>
+                                                            <tr >
+                                                                <th>Sr</th>
+                                                                <th>Payment Method</th>
+                                                                <th>UPI</th>
+                                                                <th>Action</th>
+
                                                             </tr>
                                                         </thead>
-                                                        <tbody>
-                                                            {data?.map((e, index) => {
-                                                                var dataId = e._id
-                                                                return (
-                                                                    <>
-
-                                                                        <tr key={index}>
-                                                                            <td >{e.paymentMethod}</td>
-                                                                            <td >{e.account} </td>
-                                                                            <td >
-                                                                                <Link to='/editupi' state={{ dataId }} ><button className=' btn-sm btn-primary'><i className="bi bi-pencil"></i></button></Link>
-                                                                                <button className=' btn-sm btn-danger' style={{ marginLeft: '5px' }} onClick={() => { deleteFun(dataId) }}><i className="bi bi-trash"></i></button>
-                                                                            </td>
-                                                                        </tr>
-                                                                    </>
-                                                                )
-                                                            })}
+                                                        <tbody >
                                                         </tbody>
                                                     </table>
 
@@ -161,6 +209,7 @@ const Upidetails = () => {
 
                             </div>
                         </section>
+
                     </div>
                 </div>
             </main>

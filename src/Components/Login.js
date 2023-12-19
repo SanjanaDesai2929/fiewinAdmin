@@ -58,7 +58,6 @@ const Login = () => {
                     });
                 }
 
-
         }
 
     }
@@ -86,7 +85,7 @@ const Login = () => {
                                 <form>
 
                                     <div className="divider d-flex align-items-center my-4">
-                                        <p className="text-center fw-bold mx-3 mb-0"><h3>Login Please</h3></p>
+                                        <p className="text-center fw-bold mx-3 mb-0"><h3>Login </h3></p>
                                     </div>
 
 
@@ -97,17 +96,11 @@ const Login = () => {
                                             onChange={(e) => { setName(e.target.value) }} required />
                                     </div>
 
-
                                     <div className="form-outline mb-3">
                                         <label className="form-label" for="form3Example4"><h5>Password</h5></label>
                                         <input type="password" id="form3Example4" className="form-control form-control-lg" style={{ marginTop: -'10px' }}
                                             placeholder="Enter password" value={password}
                                             onChange={(e) => { setPassword(e.target.value) }} required />
-                                    </div>
-
-                                    <div className="d-flex justify-content-between align-items-center">
-
-                                        <a href="#!" className="text-body">Forgot password?</a>
                                     </div>
 
                                     <div className="text-center text-lg-start mt-4 pt-2">

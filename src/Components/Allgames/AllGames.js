@@ -53,7 +53,7 @@ const AllGames = () => {
         setData(datares)
     }
 
-    
+
     useEffect(() => {
         getData()
     }, [])
@@ -96,7 +96,7 @@ const AllGames = () => {
                                                 </thead>
                                                 <tbody>
 
-                                                    {data?.map((e) => {
+                                                    {data && data.length ? data.map((e) => {
 
 
                                                         var statusData = (e) => {
@@ -149,7 +149,19 @@ const AllGames = () => {
                                                                 </tr>
                                                             </>
                                                         )
-                                                    })}
+                                                    }) :
+                                                        <tr>
+                                                            <td colSpan='4'>
+
+                                                                <div class="text-center w-100" colspan="2">
+                                                                    <div class="spinner-border" role="status">
+                                                                        <span class="sr-only">Loading...</span>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+
+                                                        </tr>
+                                                    }
                                                 </tbody>
 
                                             </table>

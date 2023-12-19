@@ -59,7 +59,6 @@ const route = (props) => {
                 <Route path="/setting" element={<PrivateRoute><Setting /> </PrivateRoute>} />
                 <Route path="/allGames" element={<PrivateRoute><AllGames /> </PrivateRoute>} />
                 <Route path="/editGame" element={<PrivateRoute><EditGames /> </PrivateRoute>} />
-
             </Routes>
         </>
     )

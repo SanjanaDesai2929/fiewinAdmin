@@ -11,8 +11,6 @@ const Setting = () => {
 
     const [image, setImage] = useState()
     const [imagePreview, setImagePreview] = useState()
-    const [value, setValue] = useState()
-    const [footer, setFooter] = useState()
     const [footerValue, setFooterValue] = useState()
     const [id, setId] = useState()
 
@@ -37,9 +35,8 @@ const Setting = () => {
 
             })
             const datares = await res.json();
+
             setImagePreview(datares[0].web_config_value)
-            setValue(datares[0].web_config_name)
-            setFooter(datares[1].web_config_name)
             setFooterValue(datares[1].web_config_value)
             setId({ logoid: datares[0]._id, footerid: datares[1]._id })
         }
@@ -53,9 +50,7 @@ const Setting = () => {
         const footerId = id.footerid
 
         const formData = new FormData()
-        formData.append("value", value)
         formData.append("image", image)
-        formData.append("footer", footer)
         formData.append("footerValue", footerValue)
         formData.append("logoId", logoId)
         formData.append("footerId", footerId)
@@ -115,9 +110,10 @@ const Setting = () => {
 
                                                     <tr>
                                                         <td className='col-4 text-center'>
-                                                            <input type="text" className="form-control-plaintext text-center" id="staticEmail" value={value} style={{ fontSize: '20px' }}
+                                                            {/* <input type="text" className="form-control-plaintext text-center" id="staticEmail" value={value} style={{ fontSize: '20px' }}
                                                                 onChange={(e) => { setValue(e.target.value) }}
-                                                            ></input>
+                                                            ></input> */}
+                                                            <div className="form-control-plaintext text-center" style={{ fontSize: '20px' }}><b>Company Logo</b></div>
                                                         </td>
                                                         <td >
                                                             <input type="file" id="form3Example4c" className="form-control col-8" onChange={(e) => {
@@ -133,7 +129,7 @@ const Setting = () => {
                                                             {setImagePreview && (
                                                                 <img className='mt-3'
                                                                     src={imagePreview}
-                                                                    alt="Preview of selectedimage"
+                                                                    alt="Preview of Logo"
                                                                     style={{ maxWidth: '20%' }}
                                                                 />
                                                             )}
@@ -144,11 +140,10 @@ const Setting = () => {
                                                     </tr>
                                                     <tr>
                                                         <td className='col-3 text-center'>
-                                                            <input type="text" className="form-control-plaintext text-center" id="staticEmail" value={footer} style={{ fontSize: '20px' }}
-                                                                onChange={(e) => { setFooter(e.target.value) }}
-                                                            ></input>
+                                                            <div className="form-control-plaintext text-center" style={{ fontSize: '20px' }}><b>Footer</b></div>
+
                                                         </td>
-                                                        <td className='col-8' >  <input type="text" className="form-control-plaintext" id="staticEmail" value={footerValue}
+                                                        <td className='col-8' >  <input type="text" className="form-control-plaintext" id="staticEmail" value={footerValue || "Loading..."}
                                                             onChange={(e) => { setFooterValue(e.target.value) }}
                                                         ></input></td>
                                                         {/* <td>

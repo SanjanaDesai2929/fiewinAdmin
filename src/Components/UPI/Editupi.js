@@ -15,7 +15,8 @@ const Editupi = () => {
     const [qrcodepreview, setQrcodepreview] = useState()
 
     const location = useLocation()
-    const dataid = location.state.dataId
+    const dataid = location.state
+    console.log(dataid);
     const navigate = useNavigate()
 
     //get upi data 
@@ -34,9 +35,11 @@ const Editupi = () => {
 
             })
             const datares = await res.json();
+            console.log(datares);
             datares.map((e) => {
                 setType(e.paymentMethod)
                 setUpi(e.account)
+                console.log(e.qrcode);
                 setQrcodepreview(e.qrcode)
             })
             if (res.status === 200) {
@@ -62,7 +65,7 @@ const Editupi = () => {
         } else {
 
 
-            const formData = new FormData() 
+            const formData = new FormData()
             formData.append("dataid", dataid)
             formData.append("type", type)
             formData.append("upi", upi)

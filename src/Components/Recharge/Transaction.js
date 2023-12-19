@@ -167,6 +167,7 @@ const Transaction = () => {
     }
     //return transaction screenshots photo
     const imageset = () => {
+        console.log(data);
         if (data) {
 
             if (data.transcationScreenShot) {
@@ -180,50 +181,6 @@ const Transaction = () => {
         }
     }
 
-    //table data
-    const tableData = {
-
-        columns: [
-            {
-                label: 'TransactionScreenShot',
-                field: 'transcationScreenShot',
-                sort: 'asc',
-                width: 50
-            },
-            {
-                label: 'Payment Account',
-                field: 'Payment_account',
-                sort: 'asc',
-                width: 50
-            },
-            {
-                label: 'Upi',
-                field: 'u_transaction_id',
-                sort: 'asc',
-                width: 50
-            },
-            {
-                label: 'Status',
-                field: 'Status',
-                sort: 'asc',
-                width: 50
-            }
-        ],
-        rows: [
-            {
-                transcationScreenShot: imageset(),
-                Payment_account: payAccount(),
-                u_transaction_id: transaction(),
-                Status: Status()
-            }
-        ]
-
-
-
-
-
-
-    }
 
     //table label
     const label = () => {
@@ -243,7 +200,7 @@ const Transaction = () => {
                     </div>
                 </div>
                 {/* DataTable */}
-                <section className="section dashboard mt-4">
+                {/* <section className="section dashboard mt-4">
                     <div className="row">
 
                         <div className="col-lg-12">
@@ -264,6 +221,52 @@ const Transaction = () => {
                                                 noRecordsFoundLabel={label()}
 
                                             />
+
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </section> */}
+                <section className="section dashboard mt-4">
+                    <div className="row">
+
+                        <div className="col-lg-12">
+                            <div className="row">
+
+                                <div className="col-12">
+                                    <div className="card recent-sales overflow-auto">
+
+
+                                        <div className="card-body">
+                                            <h4 className="card-title">{`Transactionid : ${tr_id}`}</h4>
+
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">TransactionScreenShot</th>
+                                                        <th scope="col">Payment Account</th>
+                                                        <th scope="col">Upi</th>
+                                                        <th scope="col">Status</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>{imageset()}</td>
+                                                        <td>{payAccount()}</td>
+                                                        <td>{transaction()}</td>
+                                                        <td>{Status()}</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
 
 
                                         </div>

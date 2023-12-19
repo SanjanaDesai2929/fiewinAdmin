@@ -139,7 +139,7 @@ const Profile = () => {
                                         <div className="col-sm-9">
                                             {/* <input type="text" id="form3Example1c" className="form-control" value={task} onChange={(e) => { setTask(e.target.value) }} /> */}
 
-                                            <input type="text" id="form3Example1c" className="form-control" value={uname} onChange={Change}></input>
+                                            <input type="text" id="form3Example1c" className="form-control" value={uname||"Loading....."} onChange={Change}></input>
                                         </div>
 
                                     </div>
@@ -149,7 +149,7 @@ const Profile = () => {
                                             <p className="mb-0" >Wallet</p>
                                         </div>
                                         <div className="col-sm-9">
-                                            <input type="text" id="form3Example1c" className="form-control" value={wallet} onChange={ChangeWallet}></input>
+                                            <input type="text" id="form3Example1c" className="form-control" value={wallet||"Loading....."} onChange={ChangeWallet} readOnly></input>
                                         </div>
                                     </div>
                                     <hr />

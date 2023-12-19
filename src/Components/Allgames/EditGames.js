@@ -98,7 +98,6 @@ const EditGames = () => {
 
                         <div className="col-lg-12">
                             <div className="row">
-
                                 <div className="container h-100">
                                     <div className="row d-flex justify-content-center align-items-center h-100">
                                         <div className="col-lg-12 col-xl-11">
@@ -114,33 +113,26 @@ const EditGames = () => {
                                                                 <div className="d-flex flex-row align-items-center mb-4">
                                                                     <div className="form-outline flex-fill mb-0">
                                                                         <label className="form-label" for="form3Example1c">Game Name</label>
-                                                                        <input type="text" id="form3Example1c" className="form-control" value={name} onChange={(e) => { setName(e.target.value) }} />
+                                                                        <input type="text" id="form3Example1c" className="form-control" value={name||"Loading..."} onChange={(e) => { setName(e.target.value) }} />
                                                                     </div>
                                                                 </div>
-
-
                                                                 <div className="d-flex flex-row align-items-center mb-4">
                                                                     <div className="form-outline flex-fill mb-0">
                                                                         <label className="form-label" for="form3Example4c">Logo</label>
                                                                         <input type="file" id="form3Example4c" className="form-control" onChange={(e) => {
                                                                             const selectedFile = e.target.files[0];
-                                                                            // console.log(selectedFile, "hello")
                                                                             setImage(selectedFile);
                                                                             if (selectedFile) {
                                                                                 const previewUrl = URL.createObjectURL(selectedFile);
                                                                                 setImagePreview(previewUrl)
-                                                                                    ;
                                                                             }
                                                                         }} />
                                                                         <div className='text-center'>
 
-                                                                            <img src={imagePreview} className='img-fluid mt-2' alt='imag' />
+                                                                            <img src={imagePreview} className='img-fluid mt-2' alt='Preview of Logo' />
                                                                         </div>
                                                                     </div>
                                                                 </div>
-
-
-
                                                                 <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                                                                     <button type="button" className="btn btn-primary btn-lg" onClick={sendData}>Edit</button>
                                                                 </div>
