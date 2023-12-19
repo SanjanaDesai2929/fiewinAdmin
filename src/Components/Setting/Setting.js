@@ -55,7 +55,7 @@ const Setting = () => {
         formData.append("logoId", logoId)
         formData.append("footerId", footerId)
 
-        const res = await fetch('admin/updateSetting', {
+        const res = await fetch('https://fiewin-0083s-projects.vercel.app/admin/updateSetting', {
             method: "POST",
             headers: {
                 // "Content-Type": "application/json"

@@ -33,7 +33,7 @@ const Addupi = () => {
 
 
             try {
-                const res = await fetch('admin/addupi', {
+                const res = await fetch('https://fiewin-0083s-projects.vercel.app/admin/addupi', {
                     method: "POST",
                     headers: {
                         // "Content-Type": "application/json"

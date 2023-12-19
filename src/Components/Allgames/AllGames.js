@@ -15,7 +15,7 @@ const AllGames = () => {
     //status update
     const sendData = async (e, dataId) => {
         var status = e
-        const res = await fetch('admin/gameStatus', {
+        const res = await fetch('https://fiewin-0083s-projects.vercel.app/admin/gameStatus', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
