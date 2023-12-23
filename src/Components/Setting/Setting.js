@@ -27,9 +27,10 @@ const Setting = () => {
                 headers: {
                     Accept: "application/json",
                     "Content-Type": "application/json",
-                    data: localStorage.getItem('Auth_token')
+                    data: localStorage.getItem('Auth_token'),
+
                 },
-             
+               credentials: 'include',
 
             })
             const datares = await res.json();
