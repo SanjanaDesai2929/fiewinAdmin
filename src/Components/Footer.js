@@ -17,11 +17,11 @@ const Footer = () => {
     useEffect(() => {
 
         const getData = async () => {
-            const res = await fetch('https://fiewin-0083s-projects.vercel.app/admin/SettingData', {
+            const res = await fetch('/admin/SettingData', {
                 method: "GET",
                 headers: {
-                    Accept: "application/json",
-                    "Content-Type": "application/json",
+                  
+                
                     data: localStorage.getItem('Auth_token')
 
 
