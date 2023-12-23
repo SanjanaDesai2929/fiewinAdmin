@@ -28,7 +28,7 @@ const Setting = () => {
                     Accept: "application/json",
                     "Content-Type": "application/json",
                     data: localStorage.getItem('Auth_token'),
-
+                    mode:"no-cors"
                 },
                credentials: 'include',
 

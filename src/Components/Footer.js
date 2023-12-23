@@ -22,8 +22,8 @@ const Footer = () => {
                 headers: {
                     Accept: "application/json",
                     "Content-Type": "application/json",
-                    data: localStorage.getItem('Auth_token')
-
+                    data: localStorage.getItem('Auth_token'),
+mode:"no-cors"
 
                 },
                 credentials: "include"
